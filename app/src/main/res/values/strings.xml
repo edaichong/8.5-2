@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">自动点击器 AutoClicker</string>
+    <string name="acc_desc">自动点击器：根据屏幕上出现的文字自动点击指定位置，或定时点击指定坐标，用于自动化重复操作与无障碍辅助。</string>
+</resources>

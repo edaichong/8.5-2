@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF121212"
+        android:paddingBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:marginTop="4dp"
+                android:text="文字匹配 / 定时坐标点击 · 无障碍自动操作工具"
+                android:textSize="13sp"
+                android:textColor="#9E9E9E" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#1E1E1E"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1. 开启无障碍服务"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="在系统「无障碍」里找到「自动点击器 AutoClicker」并开启，否则无法监听屏幕与模拟点击。"
+                        android:textColor="#BDBDBD"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/btnOpenAccessibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="去开启无障碍服务" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#1E1E1E"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="2. 定时点击模式（无视弹窗）"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:textSize="15sp" />
+
+                        <Switch
+                            android:id="@+id/switchTimed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="每隔 N 毫秒自动点击一次指定坐标，用于读不到文字的平台。"
+                        android:textColor="#BDBDBD"
+                        android:textSize="13sp" />
+
+                    <!-- v6：深色背景+白字+内边距，确保可见 -->
+                    <EditText
+                        android:id="@+id/etInterval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="点击间隔（毫秒），例如 5000"
+                        android:inputType="number"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#9E9E9E"
+                        android:background="#2D2D2D"
+                        android:padding="12dp"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <EditText
+                            android:id="@+id/etTimedX"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="坐标 X"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#9E9E9E"
+                            android:background="#2D2D2D"
+                            android:padding="12dp"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etTimedY"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:hint="坐标 Y"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#9E9E9E"
+                            android:background="#2D2D2D"
+                            android:padding="12dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/btnUsePicked"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="用悬浮窗坐标" />
+
+                        <Button
+                            android:id="@+id/btnSaveTimed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="保存定时设置" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#1E1E1E"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3. 文字匹配场景"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="当屏幕出现指定文字时自动点击。点击右下角 + 新增；每行长按可删除，开关控制启用。"
+                        android:textColor="#BDBDBD"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="（暂无场景）"
+                        android:textColor="#757575"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:id="@+id/scenarioList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="使用提示：先开启无障碍服务 → 去目标 App，用悬浮窗的圆点对准要点的按钮并点「保存坐标」→ 回到本页填入坐标或新增文字场景。"
+                android:textColor="#607D8B"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- v6 新增：底部固定保存并返回按钮 -->
+    <Button
+        android:id="@+id/btnSaveAndBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:backgroundTint="#009688"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="✓ 保存配置并返回悬浮窗"
+        android:elevation="8dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="80dp"
+        android:contentDescription="新增场景"
+        app:srcCompat="@drawable/ic_add"
+        app:backgroundTint="@color/teal_500"
+        app:tint="#FFFFFF" />
+
+</FrameLayout>

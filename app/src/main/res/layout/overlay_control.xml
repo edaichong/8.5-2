@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/bg_panel">
+
+    <!-- 顶部拖动把手：状态 + 最小化 + 右上角 X（真关闭） -->
+    <LinearLayout
+        android:id="@+id/dragHandle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#222A33"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="自动点击器：运行中"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <!-- 最小化按钮：点击后收起到边缘变成半透明小图标 -->
+        <TextView
+            android:id="@+id/btnMinimize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textColor="#AAAAAA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✕"
+            android:textColor="#FF5252"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:paddingEnd="4dp" />
+    </LinearLayout>
+
+    <!-- ⚙ 设置按钮：跳转到主界面配置定时/场景 -->
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="⚙ 设置（配置定时 / 文字匹配规则）"
+        android:layout_marginTop="6dp" />
+
+    <!-- 控制按钮行1 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnSaveCoord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="11sp"
+            android:text="保存坐标" />
+
+        <Button
+            android:id="@+id/btnToggleTimed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:layout_marginStart="6dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="11sp"
+            android:text="定时:关" />
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:layout_marginStart="6dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="11sp"
+            android:text="暂停" />
+    </LinearLayout>
+
+    <!-- 控制按钮行2：停止 / 开始（黑底白字） -->
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:text="停止"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_btn_black"
+        android:layout_marginTop="6dp" />
+
+    <!-- 底部：提示文字 + 缩放手柄 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="拖动圆点对准要点的按钮 → 保存坐标"
+            android:textColor="#BDBDBD"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/resizeHandle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⤡ 缩放"
+            android:textColor="#9E9E9E"
+            android:textSize="13sp"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp" />
+    </LinearLayout>
+</LinearLayout>
